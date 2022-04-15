@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import {ThemeContextProvider} from './contexts/theme.context';
+import {CodeContextProvider} from './contexts/code.context';
 import App from './app';
 
 const root = ReactDOM.createRoot(
@@ -13,7 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeContextProvider>
-      <App />
+      <CodeContextProvider>
+        <App />
+      </CodeContextProvider>
     </ThemeContextProvider>
   </React.StrictMode>
 );
