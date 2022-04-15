@@ -11,7 +11,6 @@ export const AppContainer = styled.div<{ dark?: boolean }>`
 `;
 
 export const InputBox = styled.div<{ dark?: boolean }>`
-  margin-top: 1.4%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,8 +80,25 @@ export const Symbol = styled.span<{ dark?: boolean }>`
   `}
 `;
 
+export const Actions = styled.div<{ dark?: boolean }>`
+  margin-top: 1%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+`;
+
+export const Message = styled.span<{ error?: boolean }>`
+  font-family: Roboto;
+  font-size: 1.4rem;
+  color: #4bb543;
+  ${(props) => props.error && `color: #ff9494;`}
+`;
+
 export const Button = styled.button<{ dark?: boolean }>`
   all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: geomanist-regular;
   font-size: 1.2rem;
   border-radius: 0.42rem;
@@ -116,4 +132,21 @@ export const Button = styled.button<{ dark?: boolean }>`
      -moz-box-shadow: 1px 0px 3px 0px rgba(244, 245, 249, 0.7) inset;
   `}
   }
+`;
+
+export const Controls = styled.div<{ dark?: boolean }>`
+  margin-top: 1.4%;
+  padding: 0.7% 1% 1% 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.21rem;
+  border-radius: 0.7rem;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  ${(props) => props.dark && `
+    box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+  `}
 `;
