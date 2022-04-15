@@ -1,6 +1,6 @@
 import React from "react";
 
-import {AppContainer} from './styles';
+import {AppContainer, InputBox, Symbol, TextInput} from './styles';
 
 import {useThemeContext} from './contexts/theme.context';
 
@@ -15,6 +15,13 @@ const App: React.FC<AppProps> = () => {
     <AppContainer dark={dark}>
       <Title text="Crypt Arithmetic Code Generator" />
       <ThemeButton />
+      <InputBox>
+        <TextInput placeholder="Addend" />
+        <Symbol>+</Symbol>
+        <TextInput placeholder="Augend" />
+        <Symbol>=</Symbol>
+        <TextInput placeholder="Sum" />
+      </InputBox>
     </AppContainer>
   );
 };
