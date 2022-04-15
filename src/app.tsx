@@ -1,19 +1,20 @@
 import React from "react";
 
-import {AppContainer, TitleText, ThemeButtonContainer} from './styles';
+import {AppContainer} from './styles';
 
 import {useThemeContext} from './contexts/theme.context';
+
+import Title from "./components/title";
+import ThemeButton from './components/theme-button';
 
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const {dark, toggleDark} = useThemeContext();
+  const {dark} = useThemeContext();
   return (
     <AppContainer dark={dark}>
-      <TitleText dark={dark}>Crypt Arithmetic Code Generator</TitleText>
-      <ThemeButtonContainer onClick={toggleDark} dark={dark}>
-        {dark ? "🌕" : "☀️"}
-      </ThemeButtonContainer>
+      <Title text="Crypt Arithmetic Code Generator" />
+      <ThemeButton />
     </AppContainer>
   );
 };
