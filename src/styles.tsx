@@ -32,9 +32,9 @@ export const TextInput = styled.input.attrs({
   height: 4.9vh;
   text-transform: uppercase;
   background-color: #f5f4f9;
-  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
   &:focus {
     box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.75) inset;
     -webkit-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.75) inset;

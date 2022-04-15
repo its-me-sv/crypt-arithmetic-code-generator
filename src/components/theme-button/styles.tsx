@@ -21,7 +21,7 @@ export const ThemeButtonContainer = styled.div<{ dark?: boolean }>`
     filter: grayscale(100%);
   `}
   &:hover {
-    opacity: 0.7;
+    /* opacity: 0.7; */
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
     -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
