@@ -32,7 +32,7 @@ export const TextInput = styled.input.attrs({
   height: 4.9vh;
   text-transform: uppercase;
   background-color: #f5f4f9;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 1px 5px 1px rgba(244, 245, 249, 0.5);
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   ${(props) =>
@@ -79,4 +79,41 @@ export const Symbol = styled.span<{ dark?: boolean }>`
     1px 1px 1px #4d4b4b, 5px 6px 1px #4d4b4b,
     1px 1px 1px #4d4b4b;
   `}
+`;
+
+export const Button = styled.button<{ dark?: boolean }>`
+  all: unset;
+  font-family: geomanist-regular;
+  font-size: 1.2rem;
+  border-radius: 0.42rem;
+  padding: 0.5% 1.4%;
+  cursor: pointer;
+  background-color: #171717;
+  color: #f5f4f9;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  ${(props) =>
+    props.dark &&
+    `
+    background-color: #f5f4f9;
+    color: #171717;
+    box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+  `}
+  &:hover {
+    color: rgba(244, 245, 249, 0.5);
+    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    -webkit-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    ${(props) =>
+      props.dark &&
+      `
+      color: rgba(23, 23, 23, 0.5);
+      box-shadow: 1px 0px 3px 0px rgba(244, 245, 249, 0.7) inset;
+     -webkit-box-shadow: 1px 0px 3px 0px rgba(244, 245, 249, 0.7) inset;
+     -moz-box-shadow: 1px 0px 3px 0px rgba(244, 245, 249, 0.7) inset;
+  `}
+  }
 `;
