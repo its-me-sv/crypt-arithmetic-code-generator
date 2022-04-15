@@ -27,7 +27,7 @@ export const TextInput = styled.input.attrs({
   text-align: center;
   border-radius: 0.42rem;
   outline: none;
-  width: 14vw;
+  /* width: 14vw; */
   height: 4.9vh;
   text-transform: uppercase;
   background-color: #f5f4f9;
@@ -136,7 +136,7 @@ export const Button = styled.button<{ dark?: boolean }>`
 
 export const Controls = styled.div<{ dark?: boolean }>`
   margin-top: 1.4%;
-  padding: 0.7% 1% 1% 1%;
+  padding: 0.7% 1% 0.84% 1%;
   display: flex;
   flex-direction: column;
   gap: 0.21rem;
