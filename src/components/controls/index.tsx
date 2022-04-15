@@ -40,7 +40,7 @@ const Controls: React.FC<ControlsInterface> = () => {
         <Message error={error}>{message}</Message>
         <Button dark={dark} onClick={handleClick}>Generate code</Button>
       </Actions>
-      <CodeContainer value={code} />
+      <CodeContainer value={code} dark={dark} />
     </Container>
   );
 };

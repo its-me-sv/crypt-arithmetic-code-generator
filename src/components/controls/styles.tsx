@@ -21,7 +21,7 @@ export const TextInput = styled.input.attrs({
   height: 4.9vh;
   text-transform: uppercase;
   background-color: #f5f4f9;
-  box-shadow: 1px 1px 5px 1px rgba(244, 245, 249, 0.5);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   ${(props) =>
@@ -145,8 +145,55 @@ export const Container = styled.div<{ dark?: boolean }>`
 
 export const CodeContainer = styled.textarea.attrs({
   readonly: true,
-  rows: 42
-})`
+  rows: 26,
+})<{ dark?: boolean }>`
   margin-top: 1%;
+  margin-bottom: 0.5%;
+  padding-left: 1%;
+  font-size: 1rem;
   resize: none;
+  border-radius: 0.42rem;
+  outline: none;
+  border: none;
+  color: transparent;
+  background-color: #f5f4f9;
+  box-shadow: 1px 1px 5px 1px rgba(244, 245, 249, 0.5);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 0px 0px #171717;
+  ${(props) =>
+    props.dark &&
+    `
+    box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    background-color: #171717;
+    text-shadow: 0px 0px 0px #f5f4f9;
+  `}
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.42rem;
+    height: 0.42rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.7rem;
+    background-color: rgb(23, 23, 23, 0.7);
+    ${(props) => props.dark && `background-color: rgb(244, 245, 249, 0.7)`}
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    opacity: 0;
+  }
 `; 

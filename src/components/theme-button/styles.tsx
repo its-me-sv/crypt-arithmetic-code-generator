@@ -12,13 +12,14 @@ export const ThemeButtonContainer = styled.div<{ dark?: boolean }>`
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
   -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
+  filter: grayscale(100%);
   ${(props) =>
     props.dark &&
     `
     box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
     -webkit-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
     -moz-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
-    filter: grayscale(100%);
+    filter: grayscale(0%);
   `}
   &:hover {
     /* opacity: 0.7; */
