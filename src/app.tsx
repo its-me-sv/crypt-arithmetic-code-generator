@@ -1,6 +1,6 @@
 import React from "react";
 
-import {AppContainer, TitleText, ThemeButtonContainer, ThemeButton} from './styles';
+import {AppContainer, TitleText, ThemeButtonContainer} from './styles';
 
 import {useThemeContext} from './contexts/theme.context';
 
@@ -12,7 +12,7 @@ const App: React.FC<AppProps> = () => {
     <AppContainer dark={dark}>
       <TitleText dark={dark}>Crypt Arithmetic Code Generator</TitleText>
       <ThemeButtonContainer onClick={toggleDark} dark={dark}>
-        <ThemeButton>{dark ? "🌕" : "☀️"}</ThemeButton>
+        {dark ? "🌕" : "☀️"}
       </ThemeButtonContainer>
     </AppContainer>
   );
