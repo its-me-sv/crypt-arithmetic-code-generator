@@ -126,7 +126,7 @@ export const Button = styled.button<{ dark?: boolean }>`
 
 export const Container = styled.div<{ dark?: boolean }>`
   margin-top: 1.4%;
-  padding: 0.7% 1% 0.84% 1%;
+  padding: 0.7%;
   display: flex;
   flex-direction: column;
   gap: 0.21rem;
