@@ -16,11 +16,11 @@ const App: React.FC<AppProps> = () => {
       <Title text="Crypt Arithmetic Code Generator" />
       <ThemeButton />
       <InputBox>
-        <TextInput placeholder="Addend" />
-        <Symbol>+</Symbol>
-        <TextInput placeholder="Augend" />
-        <Symbol>=</Symbol>
-        <TextInput placeholder="Sum" />
+        <TextInput dark={dark} placeholder="Addend" />
+        <Symbol dark={dark}>+</Symbol>
+        <TextInput dark={dark} placeholder="Augend" />
+        <Symbol dark={dark}>=</Symbol>
+        <TextInput dark={dark} placeholder="Sum" />
       </InputBox>
     </AppContainer>
   );

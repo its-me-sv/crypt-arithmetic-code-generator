@@ -20,11 +20,11 @@ export const InputBox = styled.div<{ dark?: boolean }>`
 
 export const TextInput = styled.input.attrs({
   type: "text",
-})`
+})<{ dark?: boolean }>`
   all: unset;
   font-family: Roboto;
   font-size: 1.4rem;
-  color: rgba(0, 0, 0, 0.84);
+  color: #171717;
   text-align: center;
   border-radius: 0.42rem;
   outline: none;
@@ -32,21 +32,51 @@ export const TextInput = styled.input.attrs({
   height: 4.9vh;
   text-transform: uppercase;
   background-color: #f5f4f9;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
+  ${(props) =>
+    props.dark &&
+    `
+    box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
+    background-color: #171717;
+    color: #f5f4f9;
+  `}
   &:focus {
-    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.75) inset;
-    -webkit-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.75) inset;
-    -moz-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.75) inset;
+    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    -webkit-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.7) inset;
+    ${(props) =>
+      props.dark &&
+      `
+      box-shadow: 1px 0px 3px 0px rgba(245, 244, 249, 0.7) inset;
+      -webkit-box-shadow: 1px 0px 3px 0px rgba(245, 244, 249, 0.7) inset;
+      -moz-box-shadow: 1px 0px 3px 0px rgba(245, 244, 249, 0.7) inset;
+  `}
   }
 `;
 
-export const Symbol = styled.span`
+export const Symbol = styled.span<{ dark?: boolean }>`
   font-size: 2.1rem;
   font-family: Roboto;
+  color: rgba(0, 0, 0, 0.91);
+  ${(props) => props.dark && `color: #f5f4f9;`}
   text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc,
     1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 1px 3px 1px #ccc,
     3px 4px 1px #eee, 1px 4px 1px #ccc, 4px 5px 1px #eee, 1px 1px 1px #ccc,
     5px 6px 1px #eee, 1px 1px 1px #ccc;
+  ${(props) =>
+    props.dark &&
+    `
+  text-shadow: 
+    1px 0px 1px #4d4b4b, 0px 1px 1px #4d4b4b, 
+    2px 1px 1px #4d4b4b, 1px 2px 1px #4d4b4b,
+    3px 2px 1px #4d4b4b, 2px 3px 1px #4d4b4b,
+    1px 3px 1px #4d4b4b, 3px 4px 1px #4d4b4b,
+    1px 4px 1px #4d4b4b, 4px 5px 1px #4d4b4b,
+    1px 1px 1px #4d4b4b, 5px 6px 1px #4d4b4b,
+    1px 1px 1px #4d4b4b;
+  `}
 `;
