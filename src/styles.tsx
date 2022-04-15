@@ -6,6 +6,7 @@ export const AppContainer = styled.div<{ dark?: boolean }>`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
   background-color: #f5f4f9;
   ${(props) => props.dark && `background-color: rgba(0, 0, 0, 0.91);`}
 `;

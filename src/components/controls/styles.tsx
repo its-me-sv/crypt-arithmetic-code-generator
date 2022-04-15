@@ -142,3 +142,11 @@ export const Container = styled.div<{ dark?: boolean }>`
     -moz-box-shadow: 1px 1px 5px 1px rgba(245, 244, 249, 0.7);
   `}
 `;
+
+export const CodeContainer = styled.textarea.attrs({
+  readonly: true,
+  rows: 42
+})`
+  margin-top: 1%;
+  resize: none;
+`; 

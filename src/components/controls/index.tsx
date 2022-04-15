@@ -4,7 +4,7 @@ import {
   Container, InputBox, 
   TextInput, Symbol, 
   Actions, Message, 
-  Button
+  Button, CodeContainer
 } from './styles';
 
 import {useThemeContext} from '../../contexts/theme.context' ;
@@ -14,7 +14,7 @@ interface ControlsInterface {}
 
 const Controls: React.FC<ControlsInterface> = () => {
   const {dark} = useThemeContext();
-  const {message, error} = useCodeContext();
+  const {message, error, code} = useCodeContext();
   
   const addendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const augendRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -40,6 +40,7 @@ const Controls: React.FC<ControlsInterface> = () => {
         <Message error={error}>{message}</Message>
         <Button dark={dark} onClick={handleClick}>Generate code</Button>
       </Actions>
+      <CodeContainer value={code} />
     </Container>
   );
 };

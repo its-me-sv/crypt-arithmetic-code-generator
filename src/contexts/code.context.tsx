@@ -1,4 +1,5 @@
 import React, {createContext, ReactNode, useContext, useState} from 'react';
+import PythonCode from '../temp';
 
 interface CodeContextInterface {
   error: boolean;
@@ -8,7 +9,7 @@ interface CodeContextInterface {
 
 const defaultState: CodeContextInterface = {
   error: false,
-  code: '',
+  code: PythonCode,
   message: ''
 };
 
