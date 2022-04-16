@@ -5,6 +5,7 @@ import './index.css';
 
 import {ThemeContextProvider} from './contexts/theme.context';
 import {CodeContextProvider} from './contexts/code.context';
+import {LanguageContextProvider} from './contexts/language.context';
 import App from './app';
 
 const root = ReactDOM.createRoot(
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <ThemeContextProvider>
       <CodeContextProvider>
-        <App />
+        <LanguageContextProvider>
+          <App />
+        </LanguageContextProvider>
       </CodeContextProvider>
     </ThemeContextProvider>
   </React.StrictMode>
