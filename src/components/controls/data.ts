@@ -8,3 +8,46 @@ export const translations: Array<{p1: string; p2: string; p3: string; btn: strin
   {p1: 'الإضافة', p2: 'يبشر', p3: 'مجموع', btn: 'إنشاء التعليمات البرمجية'},
   {p1: 'Addend', p2: 'Augend', p3: 'Sum', btn: 'Generate code'},
 ];
+
+export const statusText: {[key: number]: {[key: string]: string}} = {
+  0: {
+    '-1': '某些输入字段为空',
+    '-2': '输入中超过 10 个不同的字母',
+    '1': '代码已成功生成 '
+  },
+  1: {
+    '-1': 'Algunos de los campos de entrada están vacíos',
+    '-2': 'Encontrado más de 10 letras diferentes',
+    '1': 'El código ha sido generado con éxito en '
+  },
+  2: {
+    '-1': 'Certains champs de saisie sont vides',
+    '-2': 'Trouvé plus de 10 lettres de district',
+    '1': 'Le code a été généré avec succès dans '
+  },
+  3: {
+    '-1': 'சில உள்ளீட்டு புலங்கள் காலியாக உள்ளன',
+    '-2': '10க்கும் மேற்பட்ட வட்ட எழுத்துக்கள் கிடைத்தன',
+    '1': 'குறியீடு வெற்றிகரமாக உருவாக்கப்பட்டது '
+  },
+  4: {
+    '-1': 'Некоторые поля ввода пусты',
+    '-2': 'Найдено более 10 удалённых букв',
+    '1': 'Код был успешно сгенерирован в '
+  },
+  5: {
+    '-1': '일부 입력 필드가 비어 있습니다',
+    '-2': '10개 이상의 개별 문자를 찾았습니다',
+    '1': '에서 코드가 성공적으로 생성되었습니다 '
+  },
+  6: {
+    '-1': 'بعض حقول الإدخال فارغة',
+    '-2': 'تم العثور على أكثر من 10 أحرف مميّزة',
+    '1': 'تم إنشاء الرمز بنجاح في '
+  },
+  7: {
+    '-1': 'Some of the input fields are empty',
+    '-2': 'Found more than 10 distict letters',
+    '1': 'Code has been generated successfully in '
+  }
+};

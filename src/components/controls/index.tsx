@@ -6,7 +6,7 @@ import {
   Actions, Message, 
   Button, CodeContainer
 } from './styles';
-import {translations} from './data';
+import {translations, statusText} from './data';
 
 import {useThemeContext} from '../../contexts/theme.context' ;
 import {useCodeContext} from '../../contexts/code.context';
@@ -17,7 +17,7 @@ interface ControlsInterface {}
 const Controls: React.FC<ControlsInterface> = () => {
   const {dark} = useThemeContext();
   const {language} = useLanguageContext();
-  const {error, code} = useCodeContext();
+  const {status, code, fetchCode} = useCodeContext();
   
   const addendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const augendRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -27,7 +27,7 @@ const Controls: React.FC<ControlsInterface> = () => {
     const addend = addendRef.current.value;
     const augend = augendRef.current.value;
     const result = resultRef.current.value;
-    window.alert(JSON.stringify({addend, augend, result}));
+    fetchCode!(addend, augend, result);
   };
   
   return (
@@ -40,7 +40,7 @@ const Controls: React.FC<ControlsInterface> = () => {
         <TextInput dark={dark} placeholder={translations[language].p3} ref={resultRef} />
       </InputBox>
       <Actions>
-        <Message error={error}>{''}</Message>
+        <Message error={status < 0}>{statusText[language][status + '']}</Message>
         <Button dark={dark} onClick={handleClick}>
           {translations[language].btn}
         </Button>
