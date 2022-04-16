@@ -15,7 +15,7 @@ const App: React.FC<AppProps> = () => {
   const {dark} = useThemeContext();
   return (
     <AppContainer dark={dark}>
-      <Title text="Crypt Arithmetic Code Generator" />
+      <Title />
       <ThemeButton />
       <Country />
       <Controls />
