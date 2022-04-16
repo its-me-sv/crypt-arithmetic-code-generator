@@ -145,7 +145,7 @@ export const Container = styled.div<{ dark?: boolean }>`
 
 export const CodeContainer = styled.textarea.attrs({
   readonly: true,
-  rows: 26,
+  rows: 18,
 })<{ dark?: boolean }>`
   margin-top: 1%;
   margin-bottom: 0.5%;

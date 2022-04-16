@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {AppContainer} from './styles';
+import {AppContainer, Footer} from './styles';
 
 import {useThemeContext} from './contexts/theme.context';
 
@@ -17,6 +17,9 @@ const App: React.FC<AppProps> = () => {
       <Title text="Crypt Arithmetic Code Generator" />
       <ThemeButton />
       <Controls />
+      <Footer dark={dark}>
+        Made with <span>❤</span> by <a href="https://github.com/its-me-sv" target="_blank" rel='noreferrer'>Suraj Vijay</a>
+      </Footer>
     </AppContainer>
   );
 };
