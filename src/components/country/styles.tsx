@@ -4,13 +4,16 @@ export const FlagsContainer = styled.div<{ dark?: boolean }>`
   position: absolute;
   top: 1.4%;
   right: 0.7%;
-  padding: 0.35% 0.56%;
+  padding: 1% 0.56%;
+  padding-right: 1%;
   background-color: #f5f4f9;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.42rem;
+  justify-content: center; */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
   border-radius: 0.42rem;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
