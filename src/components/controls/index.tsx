@@ -38,7 +38,9 @@ const Controls: React.FC<ControlsInterface> = () => {
       </InputBox>
       <Actions>
         <Message error={error}>{message}</Message>
-        <Button dark={dark} onClick={handleClick}>Generate code</Button>
+        <Button dark={dark} onClick={handleClick}>
+          Generate code
+        </Button>
       </Actions>
       <CodeContainer value={code} dark={dark} />
     </Container>
