@@ -146,7 +146,7 @@ export const CodeContainer = styled.textarea.attrs({
   readonly: true,
   rows: 18,
 })<{ dark?: boolean }>`
-  margin-top: 1.68%;
+  margin-top: 1%;
   margin-bottom: 0.42%;
   padding-left: 1%;
   font-size: 1rem;
