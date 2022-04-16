@@ -5,7 +5,7 @@ import {Container} from './styles';
 import {useThemeContext} from '../../contexts/theme.context';
 import {useLanguageContext} from '../../contexts/language.context';
 
-const transalations: Array<{f: string, l: string}> = [
+const transalations: Array<{f: string; l: string}> = [
   {f: '用', l: '经过'},
   {f: 'Hecho con', l: 'por'},
   {f: 'Fabriqué avec', l: 'par'},
