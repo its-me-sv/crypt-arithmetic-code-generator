@@ -34,16 +34,34 @@ const Controls: React.FC<ControlsInterface> = () => {
   return (
     <Container dark={dark}>
       <InputBox>
-        <TextInput dark={dark} placeholder={translations[language].p1} ref={addendRef} />
+        <TextInput
+          dark={dark}
+          placeholder={translations[language].p1}
+          ref={addendRef}
+          readOnly={loading}
+          disabled={loading}
+        />
         <Symbol dark={dark}>+</Symbol>
-        <TextInput dark={dark} placeholder={translations[language].p2} ref={augendRef} />
+        <TextInput
+          dark={dark}
+          placeholder={translations[language].p2}
+          ref={augendRef}
+          readOnly={loading}
+          disabled={loading}
+        />
         <Symbol dark={dark}>=</Symbol>
-        <TextInput dark={dark} placeholder={translations[language].p3} ref={resultRef} />
+        <TextInput
+          dark={dark}
+          placeholder={translations[language].p3}
+          ref={resultRef}
+          readOnly={loading}
+          disabled={loading}
+        />
       </InputBox>
       <Actions>
         <Message error={status < 0}>
-          {statusText[language][status + '']}
-          {status === 1 ? `${time} ms` : ''}
+          {statusText[language][status + ""]}
+          {status === 1 ? `${time} ms` : ""}
         </Message>
         <Button dark={dark} onClick={handleClick} disabled={loading}>
           {translations[language].btn}

@@ -9,7 +9,8 @@ export const InputBox = styled.div<{ dark?: boolean }>`
 
 export const TextInput = styled.input.attrs({
   type: "text",
-})<{ dark?: boolean }>`
+})<{ dark?: boolean; disabled?: boolean }>`
+  ${(props) => props.disabled && `opacity: 0.5;`}
   all: unset;
   font-family: Roboto;
   font-size: 1.4rem;
