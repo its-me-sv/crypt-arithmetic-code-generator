@@ -1,4 +1,5 @@
 import React, {createContext, ReactNode, useContext, useState} from 'react';
+import {celeberate} from '../utils/confetti.util';
 
 interface CodeContextInterface {
   status: number;
@@ -45,6 +46,7 @@ export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children})
         if (rs === 1) {
           setCode(rc);
           setTime(rt);
+          celeberate();
         }
         setLoading(false);
       })
