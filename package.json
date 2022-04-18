@@ -2,6 +2,7 @@
   "name": "crypt-arithmetic-code-generator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://its-me-sv.github.io/crypt-arithmetic-code-generator",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
