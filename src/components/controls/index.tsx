@@ -67,7 +67,8 @@ const Controls: React.FC<ControlsInterface> = () => {
           {translations[language].btn}
         </Button>
       </Actions>
-      {code.length > 0 && <CodeContainer value={code} dark={dark} />}
+      {(code.length > 0 && status === 1 && !loading) 
+      && <CodeContainer value={code} dark={dark} />}
     </Container>
   );
 };
