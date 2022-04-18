@@ -84,7 +84,7 @@ export const Message = styled.span<{ error?: boolean }>`
   ${(props) => props.error && `color: #ff9494;`}
 `;
 
-export const Button = styled.button<{ dark?: boolean }>`
+export const Button = styled.button<{ dark?: boolean; disabled?: boolean }>`
   all: unset;
   display: flex;
   align-items: center;
@@ -122,6 +122,7 @@ export const Button = styled.button<{ dark?: boolean }>`
      -moz-box-shadow: 1px 0px 3px 0px rgba(244, 245, 249, 0.7) inset;
   `}
   }
+  ${(props) => props.disabled && `opacity: 0.5;`}
 `;
 
 export const Container = styled.div<{ dark?: boolean }>`
@@ -143,7 +144,7 @@ export const Container = styled.div<{ dark?: boolean }>`
 `;
 
 export const CodeContainer = styled.textarea.attrs({
-  readonly: true,
+  readOnly: true,
   rows: 18,
 })<{ dark?: boolean }>`
   margin-top: 1%;
