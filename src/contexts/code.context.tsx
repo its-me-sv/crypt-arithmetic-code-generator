@@ -21,7 +21,7 @@ export const useCodeContext = () => useContext(CodeContext);
 
 const API_URL = process.env.NODE_ENV === "development" 
 ? "http://192.168.29.97:5000"
-: "https://cacg-47uib3ae8-its-me-sv.vercel.app/";
+: "https://cacg-47uib3ae8-its-me-sv.vercel.app";
 
 export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
   const [status, setStatus] = useState<number>(defaultState.status);
