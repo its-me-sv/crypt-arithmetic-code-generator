@@ -30,7 +30,11 @@ const Controls: React.FC<ControlsInterface> = () => {
     const addend = addendRef.current.value;
     const augend = augendRef.current.value;
     const result = resultRef.current.value;
-    fetchCode!(addend, augend, result);
+    fetchCode!(
+      addend.toUpperCase(),
+      augend.toUpperCase(),
+      result.toUpperCase()
+    );
   };
   
   return (
