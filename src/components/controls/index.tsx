@@ -8,6 +8,8 @@ import {
 } from './styles';
 import {translations, statusText} from './data';
 
+import BlockLoader from '../loader';
+
 import {useThemeContext} from '../../contexts/theme.context' ;
 import {useCodeContext} from '../../contexts/code.context';
 import {useLanguageContext} from '../../contexts/language.context';
@@ -69,6 +71,7 @@ const Controls: React.FC<ControlsInterface> = () => {
       </Actions>
       {(code.length > 0 && status === 1 && !loading) 
       && <CodeContainer value={code} dark={dark} />}
+      {loading && <BlockLoader />}
     </Container>
   );
 };
