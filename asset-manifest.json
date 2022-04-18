@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/crypt-arithmetic-code-generator/static/css/main.2726e79b.css",
-    "main.js": "/crypt-arithmetic-code-generator/static/js/main.6b96d9cb.js",
+    "main.js": "/crypt-arithmetic-code-generator/static/js/main.43d4fe69.js",
     "static/media/geomanist-regular-italic-webfont.ttf": "/crypt-arithmetic-code-generator/static/media/geomanist-regular-italic-webfont.9c5796e2a88bdc6ed4c5.ttf",
     "static/media/geomanist-regular-webfont.ttf": "/crypt-arithmetic-code-generator/static/media/geomanist-regular-webfont.dfc15950047391892e0d.ttf",
     "static/media/usa.png": "/crypt-arithmetic-code-generator/static/media/usa.0f6da7426169e3447f24.png",
@@ -10,10 +10,10 @@
     "static/media/esp.png": "/crypt-arithmetic-code-generator/static/media/esp.c86c7bd37abb2600185f.png",
     "index.html": "/crypt-arithmetic-code-generator/index.html",
     "main.2726e79b.css.map": "/crypt-arithmetic-code-generator/static/css/main.2726e79b.css.map",
-    "main.6b96d9cb.js.map": "/crypt-arithmetic-code-generator/static/js/main.6b96d9cb.js.map"
+    "main.43d4fe69.js.map": "/crypt-arithmetic-code-generator/static/js/main.43d4fe69.js.map"
   },
   "entrypoints": [
     "static/css/main.2726e79b.css",
-    "static/js/main.6b96d9cb.js"
+    "static/js/main.43d4fe69.js"
   ]
 }
