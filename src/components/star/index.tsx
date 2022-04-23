@@ -1,13 +1,16 @@
 import React from "react";
 
 import {StarContainer} from './styles';
+import {translations} from './data';
 
 import {useThemeContext} from '../../contexts/theme.context';
+import {useLanguageContext} from '../../contexts/language.context';
 
 interface StarProps {}
 
 const Star: React.FC<StarProps> = () => {
   const {dark} = useThemeContext();
+  const {language} = useLanguageContext();
   return (
     <StarContainer
       dark={dark}
@@ -15,7 +18,7 @@ const Star: React.FC<StarProps> = () => {
       target="_blank"
       rel="noreferrer"
     >
-      ⭐ on GitHub
+      {translations[language]}
     </StarContainer>
   );
 };
