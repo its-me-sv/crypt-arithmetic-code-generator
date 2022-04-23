@@ -4,7 +4,8 @@ import {
   Container, InputBox, 
   TextInput, Symbol, 
   Actions, Message, 
-  Button, CodeContainer
+  Button, CodeContainer,
+  CodeAndCopy, CopyImage
 } from './styles';
 import {translations, statusText} from './data';
 
@@ -36,6 +37,8 @@ const Controls: React.FC<ControlsInterface> = () => {
       result.toUpperCase()
     );
   };
+
+  const copyCode = () => navigator.clipboard.writeText(code);
   
   return (
     <Container dark={dark}>
@@ -73,8 +76,12 @@ const Controls: React.FC<ControlsInterface> = () => {
           {translations[language].btn}
         </Button>
       </Actions>
-      {(code.length > 0 && status === 1 && !loading) 
-      && <CodeContainer value={code} dark={dark} />}
+      {code.length > 0 && status === 1 && !loading && (
+        <CodeAndCopy>
+          <CodeContainer value={code} dark={dark} />
+          <CopyImage dark={dark} onClick={copyCode} />
+        </CodeAndCopy>
+      )}
       {loading && <BlockLoader />}
     </Container>
   );

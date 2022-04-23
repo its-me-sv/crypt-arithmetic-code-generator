@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Copy from '../../assets/icons/copy.png';
+
 export const InputBox = styled.div<{ dark?: boolean }>`
   display: flex;
   align-items: center;
@@ -144,10 +146,54 @@ export const Container = styled.div<{ dark?: boolean }>`
   `}
 `;
 
+export const CodeAndCopy = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
+
+export const CopyImage = styled.img.attrs({
+  alt: "",
+  src: Copy,
+})<{ dark?: boolean }>`
+  position: absolute;
+  top: 4.2%;
+  right: 1.4%;
+  width: 1.2rem;
+  cursor: pointer;
+  padding: 0.35% 0.42%;
+  border-radius: 0.2rem;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7);
+  ${(props) =>
+    props.dark &&
+    `
+    box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7);
+    filter: brightness(0) invert(1);
+  `}
+  &:hover {
+    /* opacity: 0.7; */
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7) inset;
+    ${(props) =>
+      props.dark &&
+      `
+    box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7) inset;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7) inset;
+    -moz-box-shadow: 0px 0px 3px 1px rgba(245,244,249,0.7) inset;
+  `}
+  }
+`;
+
 export const CodeContainer = styled.textarea.attrs({
   readOnly: true,
   rows: 18,
 })<{ dark?: boolean }>`
+  position: relative;
   margin-top: 1%;
   margin-bottom: 0.42%;
   padding-left: 1%;
