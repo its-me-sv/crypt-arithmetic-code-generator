@@ -10,6 +10,7 @@ import {
 import {translations, statusText} from './data';
 
 import BlockLoader from '../loader';
+import Progs from '../progs';
 
 import {useThemeContext} from '../../contexts/theme.context' ;
 import {useCodeContext} from '../../contexts/code.context';
@@ -20,7 +21,7 @@ interface ControlsInterface {}
 const Controls: React.FC<ControlsInterface> = () => {
   const {dark} = useThemeContext();
   const {language} = useLanguageContext();
-  const {status, code, time, loading,fetchCode} = useCodeContext();
+  const {status, code, time, loading, fetchCode} = useCodeContext();
   
   const addendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const augendRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -68,14 +69,15 @@ const Controls: React.FC<ControlsInterface> = () => {
         />
       </InputBox>
       <Actions>
-        <Message error={status < 0}>
-          {statusText[language][status + ""]}
-          {status === 1 ? `${time} ms` : ""}
-        </Message>
+        <Progs />
         <Button dark={dark} onClick={handleClick} disabled={loading}>
           {translations[language].btn}
         </Button>
       </Actions>
+      <Message error={status < 0}>
+        {statusText[language][status + ""]}
+        {status === 1 ? `${time} ms` : ""}
+      </Message>
       {code.length > 0 && status === 1 && !loading && (
         <CodeAndCopy>
           <CodeContainer value={code} dark={dark} />

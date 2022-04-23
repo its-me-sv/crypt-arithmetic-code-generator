@@ -76,13 +76,14 @@ export const Symbol = styled.span<{ dark?: boolean }>`
 export const Actions = styled.div<{ dark?: boolean }>`
   margin-top: 1%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 `;
 
 export const Message = styled.span<{ error?: boolean }>`
   font-family: Roboto;
   font-size: 1.4rem;
+  text-align: center;
   color: #4bb543;
   ${(props) => props.error && `color: #ff9494;`}
 `;
