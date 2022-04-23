@@ -9,6 +9,7 @@ import ThemeButton from './components/theme-button';
 import Controls from './components/controls';
 import Country from './components/country';
 import Footer from './components/footer';
+import Star from './components/star';
 
 interface AppProps {}
 
@@ -21,6 +22,7 @@ const App: React.FC<AppProps> = () => {
       <Country />
       <Controls />
       <Footer />
+      <Star />
     </AppContainer>
   );
 };
