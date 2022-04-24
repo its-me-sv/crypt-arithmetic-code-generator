@@ -7,7 +7,7 @@ import {
   Button, CodeContainer,
   CodeAndCopy, CopyImage
 } from './styles';
-import {translations, statusText} from './data';
+import {translations, statusText, defaultText} from './data';
 
 import BlockLoader from '../loader';
 import Progs from '../progs';
@@ -93,7 +93,7 @@ const Controls: React.FC<ControlsInterface> = () => {
         </Message>
         <CodeAndCopy>
           <CodeContainer
-            value={code || "Generated code goes here"}
+            value={code || defaultText[language]}
             dark={dark}
           />
           {code.length > 0 && <CopyImage dark={dark} onClick={copyCode} />}

@@ -6,7 +6,7 @@ interface LanguageContextInterface {
 }
 
 const defaultState: LanguageContextInterface = {
-  language: Math.floor(Math.random() * 7)
+  language: Math.floor(Math.random() * 8)
 };
 
 export const LanguageContext = createContext<LanguageContextInterface>(defaultState);

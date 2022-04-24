@@ -51,3 +51,14 @@ export const statusText: {[key: number]: {[key: string]: string}} = {
     '1': 'Code has been generated successfully in '
   }
 };
+
+export const defaultText: Array<string> = [
+  "生成的代码在这里",
+  "El código generado va aquí",
+  "Le code généré va ici",
+  "உருவாக்கப்பட்ட குறியீடு இங்கே செல்கிறது",
+  "Сгенерированный код идет сюда",
+  "생성된 코드가 여기에 표시됩니다",
+  "يتم إنشاء الكود هنا",
+  "Generated code goes here",
+];
