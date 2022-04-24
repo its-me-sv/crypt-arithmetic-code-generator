@@ -15,6 +15,7 @@ import Progs from '../progs';
 import {useThemeContext} from '../../contexts/theme.context' ;
 import {useCodeContext} from '../../contexts/code.context';
 import {useLanguageContext} from '../../contexts/language.context';
+import {useProgContext} from '../../contexts/prog.context';
 
 interface ControlsInterface {}
 
@@ -22,6 +23,7 @@ const Controls: React.FC<ControlsInterface> = () => {
   const {dark} = useThemeContext();
   const {language} = useLanguageContext();
   const {status, code, time, loading, fetchCode} = useCodeContext();
+  const {prog} = useProgContext();
   
   const addendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const augendRef = useRef() as MutableRefObject<HTMLInputElement>;
@@ -35,7 +37,8 @@ const Controls: React.FC<ControlsInterface> = () => {
     fetchCode!(
       addend.toUpperCase(),
       augend.toUpperCase(),
-      result.toUpperCase()
+      result.toUpperCase(),
+      prog
     );
   };
 

@@ -6,14 +6,16 @@ interface CodeContextInterface {
   code: string;
   loading: boolean;
   time: number;
-  fetchCode?: (addend: string, augend: string, sum: string) => void;
+  lang: number;
+  fetchCode?: (addend: string, augend: string, sum: string, plg: number) => void;
 }
 
 const defaultState: CodeContextInterface = {
   status: 0,
   code: '',
   loading: false,
-  time: 0
+  time: 0,
+  lang: 0
 };
 
 export const CodeContext = createContext<CodeContextInterface>(defaultState);
@@ -29,10 +31,11 @@ export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children})
   const [code, setCode] = useState<string>(defaultState.code);
   const [loading, setLoading] = useState<boolean>(defaultState.loading);
   const [time, setTime] = useState<number>(defaultState.time);
+  const [lang, setLang] = useState<number>(defaultState.lang);
 
-  const fetchCode = (addend: string, augend: string, sum: string) => {
+  const fetchCode = (addend: string, augend: string, sum: string, plg: number) => {
     setLoading(true);
-    fetch(`${API_URL}/api/generate`, {
+    fetch(`${API_URL}/api/generate?lang=${plg}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -41,8 +44,9 @@ export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children})
       body: JSON.stringify({ addend, augend, sum }),
     })
       .then((res) => res.json())
-      .then(({ status: rs, code: rc, time: rt }) => {
+      .then(({ status: rs, code: rc, time: rt, lang: lg }) => {
         setStatus(rs);
+        setLang(lg);
         if (rs === 1) {
           setCode(rc);
           setTime(rt);
@@ -55,7 +59,8 @@ export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children})
 
   return (
     <CodeContext.Provider value={{
-      status, code, loading, time, fetchCode
+      status, code, loading, time, lang,
+      fetchCode
     }}>
       {children}
     </CodeContext.Provider>
