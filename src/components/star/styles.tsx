@@ -11,7 +11,7 @@ export const StarContainer = styled.a<{ dark?: boolean }>`
   width: 20em;
   text-align: center;
   text-transform: uppercase;
-  font-size: 0.84em;
+  font-size: 1em;
   letter-spacing: 1.4px;
   text-decoration: none;
   transform: rotate(-45deg);
