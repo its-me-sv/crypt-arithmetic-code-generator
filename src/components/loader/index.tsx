@@ -3,9 +3,16 @@ import styled from "styled-components";
 
 import {useThemeContext} from '../../contexts/theme.context';
 
-const LoaderContainer = styled.div`
-  margin-top: 1%;
-  align-self: center;
+const LoaderContainer = styled.div<{ dark?: boolean }>`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(27, 27, 27, 0.5);
+  ${props => props.dark && `background-color: rgba(245, 244, 249, 0.5);`}
 `;
 
 const Loader = styled.div<{ dark?: boolean }>`
@@ -24,7 +31,7 @@ const Loader = styled.div<{ dark?: boolean }>`
     border-color: #171717 transparent #171717 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
     ${(props) =>
-      props.dark &&
+      !props.dark &&
       `
       border: 6px solid #f5f4f9;
       border-color: #f5f4f9 transparent #f5f4f9 transparent;
@@ -47,7 +54,7 @@ interface BlockLoaderProps {}
 const BlockLoader: React.FC<BlockLoaderProps> = () => {
   const {dark} = useThemeContext();
   return (
-    <LoaderContainer>
+    <LoaderContainer dark={dark}>
       <Loader dark={dark} />
     </LoaderContainer>
   );

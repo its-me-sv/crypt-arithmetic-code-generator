@@ -8,6 +8,7 @@ interface CodeContextInterface {
   time: number;
   lang: number;
   fetchCode?: (addend: string, augend: string, sum: string, plg: number) => void;
+  resetCode?: () => void;
 }
 
 const defaultState: CodeContextInterface = {
@@ -57,10 +58,18 @@ export const CodeContextProvider: React.FC<{children: ReactNode}> = ({children})
       .catch(() => setLoading(false));
   };
 
+  const resetCode = () => {
+    setStatus(defaultState.status);
+    setCode(defaultState.code);
+    setLoading(defaultState.loading);
+    setTime(defaultState.time);
+    setLang(defaultState.lang);
+  };
+
   return (
     <CodeContext.Provider value={{
       status, code, loading, time, lang,
-      fetchCode
+      fetchCode, resetCode
     }}>
       {children}
     </CodeContext.Provider>

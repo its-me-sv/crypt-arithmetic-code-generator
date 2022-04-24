@@ -1,4 +1,4 @@
-import React, {useRef, MutableRefObject} from 'react';
+import React, {useRef, MutableRefObject, useEffect} from 'react';
 
 import {
   Container, InputBox, 
@@ -22,12 +22,19 @@ interface ControlsInterface {}
 const Controls: React.FC<ControlsInterface> = () => {
   const {dark} = useThemeContext();
   const {language} = useLanguageContext();
-  const {status, code, time, loading, fetchCode} = useCodeContext();
+  const {
+    status, code, time, loading, 
+    fetchCode, resetCode
+  } = useCodeContext();
   const {prog} = useProgContext();
   
   const addendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const augendRef = useRef() as MutableRefObject<HTMLInputElement>;
   const resultRef = useRef() as MutableRefObject<HTMLInputElement>;
+
+  useEffect(() => {
+    resetCode!();
+  }, [prog]);
 
   const handleClick = () => {
     if (loading) return;
@@ -45,50 +52,54 @@ const Controls: React.FC<ControlsInterface> = () => {
   const copyCode = () => navigator.clipboard.writeText(code);
   
   return (
-    <Container dark={dark}>
-      <InputBox>
-        <TextInput
-          dark={dark}
-          placeholder={translations[language].p1}
-          ref={addendRef}
-          readOnly={loading}
-          disabled={loading}
-        />
-        <Symbol dark={dark}>+</Symbol>
-        <TextInput
-          dark={dark}
-          placeholder={translations[language].p2}
-          ref={augendRef}
-          readOnly={loading}
-          disabled={loading}
-        />
-        <Symbol dark={dark}>=</Symbol>
-        <TextInput
-          dark={dark}
-          placeholder={translations[language].p3}
-          ref={resultRef}
-          readOnly={loading}
-          disabled={loading}
-        />
-      </InputBox>
-      <Actions>
-        <Progs />
-        <Button dark={dark} onClick={handleClick} disabled={loading}>
-          {translations[language].btn}
-        </Button>
-      </Actions>
-      <Message error={status < 0}>
-        {statusText[language][status + ""]}
-        {status === 1 ? `${time} ms` : ""}
-      </Message>
-      {code.length > 0 && status === 1 && !loading && (
-        <CodeAndCopy>
-          <CodeContainer value={code} dark={dark} />
-          <CopyImage dark={dark} onClick={copyCode} />
-        </CodeAndCopy>
-      )}
+    <>
       {loading && <BlockLoader />}
-    </Container>
+      <Container dark={dark}>
+        <InputBox>
+          <TextInput
+            dark={dark}
+            placeholder={translations[language].p1}
+            ref={addendRef}
+            readOnly={loading}
+            disabled={loading}
+          />
+          <Symbol dark={dark}>+</Symbol>
+          <TextInput
+            dark={dark}
+            placeholder={translations[language].p2}
+            ref={augendRef}
+            readOnly={loading}
+            disabled={loading}
+          />
+          <Symbol dark={dark}>=</Symbol>
+          <TextInput
+            dark={dark}
+            placeholder={translations[language].p3}
+            ref={resultRef}
+            readOnly={loading}
+            disabled={loading}
+          />
+        </InputBox>
+        <Actions>
+          <Progs />
+          <Button dark={dark} onClick={handleClick} disabled={loading}>
+            {translations[language].btn}
+          </Button>
+        </Actions>
+        <Message error={status < 0}>
+          {statusText[language][status + ""]}
+          {status === 1 && `${time} ms`}
+          {status === 0 && "\u200C"}
+        </Message>
+        <CodeAndCopy>
+          <CodeContainer
+            value={code || "Generated code goes here"}
+            dark={dark}
+          />
+          {code.length > 0 && <CopyImage dark={dark} onClick={copyCode} />}
+        </CodeAndCopy>
+      </Container>
+    </>
   );
 };
 
