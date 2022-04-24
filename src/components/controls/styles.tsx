@@ -74,7 +74,7 @@ export const Symbol = styled.span<{ dark?: boolean }>`
 `;
 
 export const Actions = styled.div<{ dark?: boolean }>`
-  margin-top: 1%;
+  margin: 1% 0% 0.30% 0%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -195,7 +195,7 @@ export const CodeContainer = styled.textarea.attrs({
   rows: 18,
 })<{ dark?: boolean }>`
   position: relative;
-  margin-top: 1%;
+  margin-top: 0.5%;
   margin-bottom: 0.42%;
   padding-left: 1%;
   font-size: 1rem;
