@@ -92,9 +92,11 @@ const Controls: React.FC<ControlsInterface> = () => {
           {status === 0 && "\u200C"}
         </Message>
         <CodeAndCopy>
+          <label htmlFor="code" />
           <CodeContainer
             value={code || defaultText[language]}
             dark={dark}
+            id="code"
           />
           {code.length > 0 && <CopyImage dark={dark} onClick={copyCode} />}
         </CodeAndCopy>
