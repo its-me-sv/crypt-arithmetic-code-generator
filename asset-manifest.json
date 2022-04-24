@@ -1,19 +1,24 @@
 {
   "files": {
     "main.css": "/crypt-arithmetic-code-generator/static/css/main.2726e79b.css",
-    "main.js": "/crypt-arithmetic-code-generator/static/js/main.ed7154a4.js",
+    "main.js": "/crypt-arithmetic-code-generator/static/js/main.5f278da3.js",
     "static/media/geomanist-regular-italic-webfont.ttf": "/crypt-arithmetic-code-generator/static/media/geomanist-regular-italic-webfont.9c5796e2a88bdc6ed4c5.ttf",
     "static/media/geomanist-regular-webfont.ttf": "/crypt-arithmetic-code-generator/static/media/geomanist-regular-webfont.dfc15950047391892e0d.ttf",
+    "static/media/python.png": "/crypt-arithmetic-code-generator/static/media/python.6a5cbc319ab3ddf8ef92.png",
+    "static/media/cpp.png": "/crypt-arithmetic-code-generator/static/media/cpp.24a8f93854ab092f17a7.png",
     "static/media/usa.png": "/crypt-arithmetic-code-generator/static/media/usa.0f6da7426169e3447f24.png",
     "static/media/skr.png": "/crypt-arithmetic-code-generator/static/media/skr.35add7f83a035087dbb0.png",
+    "static/media/c.png": "/crypt-arithmetic-code-generator/static/media/c.63b60ecc907447f5f78d.png",
     "static/media/ind.png": "/crypt-arithmetic-code-generator/static/media/ind.de4fb626366a83642093.png",
+    "static/media/ts.png": "/crypt-arithmetic-code-generator/static/media/ts.af108db04a54d784da9b.png",
+    "static/media/js.png": "/crypt-arithmetic-code-generator/static/media/js.3dfb665e058d08c99f28.png",
     "static/media/esp.png": "/crypt-arithmetic-code-generator/static/media/esp.c86c7bd37abb2600185f.png",
     "index.html": "/crypt-arithmetic-code-generator/index.html",
     "main.2726e79b.css.map": "/crypt-arithmetic-code-generator/static/css/main.2726e79b.css.map",
-    "main.ed7154a4.js.map": "/crypt-arithmetic-code-generator/static/js/main.ed7154a4.js.map"
+    "main.5f278da3.js.map": "/crypt-arithmetic-code-generator/static/js/main.5f278da3.js.map"
   },
   "entrypoints": [
     "static/css/main.2726e79b.css",
-    "static/js/main.ed7154a4.js"
+    "static/js/main.5f278da3.js"
   ]
 }
